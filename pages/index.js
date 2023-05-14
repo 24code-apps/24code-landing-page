@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="min-h-[70vh] bg-white flex flex-col">
       <Head>
-        <title>24code.in | Software Development Company</title>
+        <title>24Code | Software Development Company</title>
         <meta
           name="description"
           content="Our company can help you save time by technology"
