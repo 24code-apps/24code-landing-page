@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://24code.in
+
+# Sitemaps
+Sitemap: https://24code.in/sitemap.xml
