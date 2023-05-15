@@ -83,26 +83,60 @@ export default function MyIP() {
           {ip && ip?.length > 0 ? (
             <div className="mt-10 flex flex-col">
               <h1 className="font-bold mb-2">The IP Address : </h1>
-              {ip?.map((each, idx) => (
-                <div key={idx} className="flex mt-1">
-                  <CopyToClipboard
-                    onCopy={() => toast.success("Copied")}
-                    text={each.address}
-                  >
-                    <div className="flex items-center">
-                      <p>
-                        Server {idx + 1} {"=>"}
-                      </p>
-                      <div className="cursor-pointer flex items-center text-md px-5">
-                        <p className="">{each.address}</p>
-                        <button className="ml-2 text-3xl">
-                          <AiOutlineCopy />
-                        </button>
+              <div className="flex">
+                <div className="flex flex-col">
+                  <p className="font-bold">Ipv4</p>
+                  {ip
+                    ?.filter((each) => each.family === 4)
+                    ?.map((each, idx) => (
+                      <div key={idx} className="flex mt-1">
+                        <CopyToClipboard
+                          onCopy={() => toast.success("Copied")}
+                          text={each.address}
+                        >
+                          <div className="flex items-center">
+                            <p>
+                              Server {idx + 1} {"=>"}
+                            </p>
+                            <div className="cursor-pointer flex items-center text-md px-5">
+                              <p className="">{each.address}</p>
+                              <button className="ml-2 text-3xl">
+                                <AiOutlineCopy />
+                              </button>
+                            </div>
+                          </div>
+                        </CopyToClipboard>
                       </div>
-                    </div>
-                  </CopyToClipboard>
+                    ))}
                 </div>
-              ))}
+                {ip?.find((e) => e.family === 6) ? (
+                  <div className="flex flex-col">
+                    <p className="font-bold">Ipv6</p>
+                    {ip
+                      ?.filter((each) => each.family === 6)
+                      ?.map((each, idx) => (
+                        <div key={idx} className="flex mt-1">
+                          <CopyToClipboard
+                            onCopy={() => toast.success("Copied")}
+                            text={each.address}
+                          >
+                            <div className="flex items-center">
+                              <p>
+                                Server {idx + 1} {"=>"}
+                              </p>
+                              <div className="cursor-pointer flex items-center text-md px-5">
+                                <p className="">{each.address}</p>
+                                <button className="ml-2 text-3xl">
+                                  <AiOutlineCopy />
+                                </button>
+                              </div>
+                            </div>
+                          </CopyToClipboard>
+                        </div>
+                      ))}
+                  </div>
+                ) : null}
+              </div>
             </div>
           ) : null}
         </div>
