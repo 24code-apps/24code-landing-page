@@ -84,7 +84,7 @@ export default function MyIP() {
             <div className="mt-10 flex flex-col">
               <h1 className="font-bold mb-2">The IP Address : </h1>
               {ip?.map((each, idx) => (
-                <div className="flex mt-1">
+                <div key={idx} className="flex mt-1">
                   <CopyToClipboard
                     onCopy={() => toast.success("Copied")}
                     text={each.address}
