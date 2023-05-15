@@ -67,6 +67,40 @@ const App = () => {
           </a>
         </div>
       </div>
+      <div className="mt-10 border-b-2 pb-5 flex flex-col items-center mx-auto">
+        <h1 className="text-lg mb-1">
+          Some of our Tiny <span className="font-bold">Apps</span> ❤️
+        </h1>
+        <div className="flex flex-col lg:flex-row items-center">
+          <Link
+            href={"/apps/online-notepad"}
+            className="cursor-pointer hover:underline"
+          >
+            Notepad
+          </Link>
+          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
+          <Link
+            href={"/apps/my-ip-address"}
+            className="cursor-pointer hover:underline"
+          >
+            My IP Address
+          </Link>
+          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
+          <Link
+            href={"/apps/password-generator-online"}
+            className="cursor-pointer hover:underline"
+          >
+            Password Generator
+          </Link>
+          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
+          <Link
+            href={"/apps/where-is-domain"}
+            className="cursor-pointer hover:underline"
+          >
+            Where is Domain
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

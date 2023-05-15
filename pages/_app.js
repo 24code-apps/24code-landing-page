@@ -37,14 +37,14 @@ const Header = () => (
       <p className="ml-2 text-md">24code.in</p>
     </Link>
     {/* <div className="flex items-center">
-  <p className="cursor-pointer hover:underline">ShowCase</p>
-  <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-  <p className="cursor-pointer hover:underline">Pricing</p>
-  <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-  <p className="cursor-pointer hover:underline">Developers</p>
-  <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-  <p className="cursor-pointer hover:underline">Articles</p>
-</div> */}
+      <p className="cursor-pointer hover:underline">Apps</p>
+      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
+      <p className="cursor-pointer hover:underline">Pricing</p>
+      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
+      <p className="cursor-pointer hover:underline">Developers</p>
+      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
+      <p className="cursor-pointer hover:underline">Articles</p>
+    </div> */}
     <div className="flex">
       <a
         target={"_blank"}
