@@ -99,6 +99,13 @@ const App = () => {
           >
             Where is Domain
           </Link>
+          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
+          <Link
+            href={"/apps/age-calculator"}
+            className="cursor-pointer hover:underline"
+          >
+            Age Calculator
+          </Link>
         </div>
       </div>
     </div>
