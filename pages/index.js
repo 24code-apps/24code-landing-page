@@ -8,31 +8,12 @@ import {
   AiOutlineMobile,
 } from "react-icons/ai";
 
+import Seo from "../components/Seo";
+
 const App = () => {
   return (
     <div className="min-h-[70vh] bg-white flex flex-col">
-      <Head>
-        <title>24Code | Software Development Company</title>
-        <meta
-          name="description"
-          content="Our company can help you save time by technology"
-        ></meta>
-        <meta
-          name="keywords"
-          content="24 Code, app development, software company, website maker"
-        ></meta>
-
-        <meta
-          property="og:title"
-          content="24Code | Software Development Company"
-        />
-        <meta
-          property="og:description"
-          content="Our company can help you save time by technology"
-        />
-        <meta property="og:image" content="/android-chrome-512x512.png" />
-        <meta property="og:url" content="https://www.24code.in" />
-      </Head>
+      <Seo />
       <div className="flex-1 bg-white text-black justify-center items-center flex flex-col">
         <h1 className="px-10 text-center text-4xl md:text-6xl lg:text-7xl max-w-[800px]">
           <span className="items-center flex flex-wrap">
