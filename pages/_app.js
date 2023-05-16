@@ -9,7 +9,6 @@ import Script from "next/script";
 
 import React from "react";
 import Link from "next/link";
-import Head from "next/head";
 
 const Footer = () => (
   <>
@@ -75,15 +74,14 @@ function MyApp({ Component, pageProps }) {
     <>
       {process.env.NODE_ENV !== "development" ? (
         <>
-          <Head>
-            <Script
-              src={
-                "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
-                process.env.NEXT_PUBLIC_GOOGLE_AD_ID
-              }
-              crossorigin="anonymous"
-            />
-          </Head>
+          <Script
+            src={
+              "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
+              process.env.NEXT_PUBLIC_GOOGLE_AD_ID
+            }
+            strategy="beforeInteractive"
+            crossorigin="anonymous"
+          />
           <Script
             src={
               "https://www.googletagmanager.com/gtag/js?id=" +
