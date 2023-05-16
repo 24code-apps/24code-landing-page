@@ -5,6 +5,7 @@ import "@fontsource/allura";
 import "../styles/globals.css";
 
 import NextNProgress from "nextjs-progressbar";
+import Script from "next/script";
 
 import React from "react";
 import Link from "next/link";
@@ -70,12 +71,31 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <NextNProgress color="#0173C6" />
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <>
+      <Script
+        src={
+          "https://www.googletagmanager.com/gtag/js?id=" +
+          process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+        }
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+       
+         gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+        `}
+      </Script>
+
+      <div className={darkMode ? "dark" : ""}>
+        <NextNProgress color="#0173C6" />
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </>
   );
 }
 
