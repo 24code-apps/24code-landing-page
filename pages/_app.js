@@ -72,22 +72,26 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Script
-        src={
-          "https://www.googletagmanager.com/gtag/js?id=" +
-          process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-        }
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      {process.env.NODE_ENV !== "development" ? (
+        <>
+          <Script
+            src={
+              "https://www.googletagmanager.com/gtag/js?id=" +
+              process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+            }
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
          window.dataLayer = window.dataLayer || [];
          function gtag(){dataLayer.push(arguments);}
          gtag('js', new Date());
        
          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
-      </Script>
+          </Script>{" "}
+        </>
+      ) : null}
 
       <div className={darkMode ? "dark" : ""}>
         <NextNProgress color="#0173C6" />
