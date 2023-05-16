@@ -75,6 +75,14 @@ function MyApp({ Component, pageProps }) {
       {process.env.NODE_ENV !== "development" ? (
         <>
           <Script
+            strategy="afterInteractive"
+            src={
+              "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
+              process.env.NEXT_PUBLIC_GOOGLE_AD_ID
+            }
+            crossorigin="anonymous"
+          />
+          <Script
             src={
               "https://www.googletagmanager.com/gtag/js?id=" +
               process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
