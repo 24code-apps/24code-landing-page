@@ -10,9 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@codemirror/lang-json": "^6.0.1",
     "@fontsource/allura": "^4.5.12",
     "@fontsource/roboto": "^4.5.8",
     "@tailwindcss/typography": "^0.5.9",
+    "@uiw/react-codemirror": "^4.19.16",
+    "@uiw/react-github-corners": "^1.5.15",
+    "@uiw/react-split": "^5.8.10",
     "axios": "^1.4.0",
     "gray-matter": "^4.0.3",
     "marked": "^5.0.2",
@@ -25,8 +29,10 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
+    "react-json-view": "^1.21.3",
     "react-loading": "^2.0.3",
     "react-otp-input": "^3.0.2",
+    "request-ip": "^3.3.0",
     "typewriter-effect": "^2.19.0",
     "zustand": "^4.3.8"
   },

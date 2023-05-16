@@ -68,9 +68,9 @@ const App = () => {
         </div>
       </div>
       <div className="mt-10 border-b-2 pb-5 flex flex-col items-center mx-auto">
-        <h1 className="text-lg mb-1">
+        <p className="text-lg mb-1">
           Some of our Tiny <span className="font-bold">Apps</span> ❤️
-        </h1>
+        </p>
         <div className="flex flex-col lg:flex-row items-center">
           <Link
             href={"/apps/online-notepad"}

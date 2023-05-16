@@ -11,7 +11,8 @@ export default function MyIP() {
 
   const fetchIPAddress = async () => {
     try {
-      const { data } = await axios("https://api.ipify.org/?format=json");
+      // const { data } = await axios("https://api.ipify.org/?format=json");
+      const { data } = await axios("/api/myIp");
       setIP(data.ip);
     } catch (err) {
       alert("Something went wrong, retry later");
