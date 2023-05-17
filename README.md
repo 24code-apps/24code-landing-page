@@ -36,3 +36,4 @@ This project was created with the help of the following resources:
 
 -   [Next.js Documentation](https://nextjs.org/docs)
 -   [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
