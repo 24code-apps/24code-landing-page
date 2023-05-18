@@ -6,6 +6,7 @@ import Link from "next/link";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import Head from "next/head";
+import Seo from "../../components/Seo";
 
 export default function PostPage({
   frontmatter: { title, description, date, cover_image },
@@ -15,19 +16,7 @@ export default function PostPage({
 }) {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description}></meta>
-        <meta
-          name="keywords"
-          content="24 Code, app development, software company, website maker"
-        ></meta>
-
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content="/android-chrome-512x512.png" />
-        <meta property="og:url" content="https://www.24code.in" />
-      </Head>
+      <Seo title={title} description={description} />
       <div
         className={`min-h-[400px] dark:bg-black prose dark:prose-invert p-3 text-md lg:text-lg mx-auto`}
       >

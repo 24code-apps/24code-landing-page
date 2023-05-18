@@ -9,6 +9,8 @@ import Script from "next/script";
 
 import React from "react";
 import Link from "next/link";
+import { AiOutlineRight, AiOutlineRightCircle } from "react-icons/ai";
+import { RiApps2Fill } from "react-icons/ri";
 
 const Footer = () => (
   <>
@@ -27,36 +29,66 @@ const Footer = () => (
   </>
 );
 
-const Header = () => (
-  <div className="z-10 sticky top-0 bg-white px-4 lg:px-10 lg:px-24 py-4 justify-between flex items-center">
-    <Link href={"/"} className="flex items-center">
-      <img
-        className="cursor-pointer h-10 rounded-full"
-        src="/android-chrome-512x512.png"
-        alt=""
-      />
-      <p className="ml-2 text-md">24code.in</p>
-    </Link>
-    {/* <div className="flex items-center">
-      <p className="cursor-pointer hover:underline">Apps</p>
-      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-      <p className="cursor-pointer hover:underline">Pricing</p>
-      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-      <p className="cursor-pointer hover:underline">Developers</p>
-      <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
-      <p className="cursor-pointer hover:underline">Articles</p>
-    </div> */}
-    <div className="flex">
-      <a
-        target={"_blank"}
-        href="https://forms.gle/tNqYzXqhQaZAdsmN7"
-        className="text-sm cursor-pointer border-2 px-4 rounded-md py-2 hover:bg-zinc-100"
-      >
-        Get Started
-      </a>
-    </div>
-  </div>
-);
+const Header = () => {
+  const links = [
+    {
+      name: "About Us",
+      link: "/about",
+    },
+    {
+      name: "Developers",
+      link: "/developers",
+    },
+  ];
+  return (
+    <>
+      <div className="z-10 sticky top-0 bg-white px-4 lg:px-10 lg:px-24 py-4 justify-between flex items-center">
+        <Link href={"/"} className="flex items-center">
+          <img
+            className="cursor-pointer h-10 rounded-full"
+            src="/android-chrome-512x512.png"
+            alt=""
+          />
+          <p className="ml-2 text-md">24code.in</p>
+        </Link>
+        <div className="hidden sm:flex items-center">
+          {links?.map((each, idx) => (
+            <>
+              <Link href={each.link}>
+                <p className="cursor-pointer hover:underline">{each.name}</p>
+              </Link>
+              {idx !== links.length - 1 ? (
+                <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
+              ) : null}
+            </>
+          ))}
+        </div>
+        <div className="flex">
+          <a
+            target={"_blank"}
+            href="https://forms.gle/tNqYzXqhQaZAdsmN7"
+            className="text-md lg:text-lg flex items-center bg-zinc-800 transition text-white cursor-pointer px-5 rounded-full py-2"
+          >
+            <p>Get Started</p>
+            <RiApps2Fill className="animate-pulse ml-2 text-lg" />
+          </a>
+        </div>
+      </div>
+      <div className="flex sm:hidden justify-center text-sm items-center">
+        {links?.map((each, idx) => (
+          <>
+            <Link href={each.link}>
+              <p className="cursor-pointer hover:underline">{each.name}</p>
+            </Link>
+            {idx !== links.length - 1 ? (
+              <div className="rounded-full mx-2 h-1 w-1 bg-black"></div>
+            ) : null}
+          </>
+        ))}
+      </div>
+    </>
+  );
+};
 
 function MyApp({ Component, pageProps }) {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -104,7 +136,9 @@ function MyApp({ Component, pageProps }) {
       <div className={darkMode ? "dark" : ""}>
         <NextNProgress color="#0173C6" />
         <Header />
-        <Component {...pageProps} />
+        <div className="min-h-[80vh]">
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </div>
     </>
