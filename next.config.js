@@ -5,6 +5,10 @@ const nextConfig = {
   env: {
     BASE_URL: process.env.BASE_URL,
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;
