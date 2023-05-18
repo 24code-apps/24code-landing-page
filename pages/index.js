@@ -15,7 +15,7 @@ const App = () => {
     <div className="min-h-[70vh] bg-white flex flex-col">
       <Seo />
       <div className="flex-1 bg-white text-black justify-center items-center flex flex-col">
-        <h1 className="px-10 text-center text-4xl md:text-6xl lg:text-7xl max-w-[800px]">
+        {/* <h1 className="px-10 text-center text-4xl md:text-6xl lg:text-7xl max-w-[800px]">
           <span className="items-center flex flex-wrap">
             <img
               className="hidden md:flex h-14 w-15 mr-2"
@@ -27,6 +27,21 @@ const App = () => {
             </p>
           </span>
           is <span className="robo text-[#0173C6]">easy</span> with us.
+        </h1> */}
+        <h1 className="px-10 text-center text-4xl md:text-6xl lg:text-7xl max-w-[800px]">
+          <span className="items-center flex flex-wrap">
+            {/* <img
+              className="hidden md:flex h-14 w-15 mr-2"
+              src="https://em-content.zobj.net/thumbs/240/whatsapp/352/rocket_1f680.png"
+              alt=""
+            /> */}
+            <p className="mt-10 text-center">
+              <span className="font-bold">Grow</span> Your{" "}
+              <span className="robo text-[#0173C6]">Business</span> With{" "}
+              <span className="font-bold">Technology</span>
+            </p>
+          </span>
+          {/* is <span className="robo text-[#0173C6]">easy</span> with us. */}
         </h1>
         <p className="flex items-center text-lg mt-10">
           Your Idea <AiFillBulb className="text-yellow-500" /> + Our Technology{" "}
