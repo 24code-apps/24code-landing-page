@@ -40,7 +40,7 @@ export default function Developers() {
               <b>Founder</b> & Sr. Full Stack Developer
             </p>
 
-            <Link className="text-blue-500" href={"/p/"}>
+            <Link className="text-blue-500" href={"/p/benzigar-codes"}>
               Read More
             </Link>
           </div>
