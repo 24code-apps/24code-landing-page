@@ -92,7 +92,9 @@ const App = () => {
         </div>
       </div>
       <div className="mt-24 justify-center flex-col flex items-center">
-        <h2 className="text-[#0173C6] text-md">OUR TECH PARTNERS</h2>
+        <h2 className="font-bold text-md">
+          OUR <span className="font-bold text-[#0173C6]">TECH</span> PARTNERS
+        </h2>
         <div className="mt-5 flex items-center">
           {techs?.map((each) => (
             <Link
@@ -128,46 +130,16 @@ const App = () => {
           /> */}
         </div>
       </div>
-      <div className="mt-24 border-b-2 pb-5 flex flex-col items-center mx-auto">
-        <p className="text-lg mb-1">
-          Some of our Tiny <span className="font-bold">Apps</span> ❤️
+      <div className="flex-col justify-center items-center mt-24 border-t-2 pt-10 flex">
+        <h1 className="max-w-[70vw] lg:max-w-[50vw] text-center font-bold text-4xl lg:text-5xl">
+          Our Technology scales for 1{" "}
+          <span className="text-[#0173C6] text-6xl uppercase">Million</span>{" "}
+          users
+        </h1>
+        <p className="text-center mt-5 max-w-[60vw] md:max-w-[50vw] lg:max-w-[30vw]">
+          Our Tech is well built to scale more than 1 million users both
+          websites and mobile apps.
         </p>
-        <div className="flex flex-col lg:flex-row items-center">
-          <Link
-            href={"/apps/online-notepad"}
-            className="cursor-pointer hover:underline"
-          >
-            Notepad
-          </Link>
-          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
-          <Link
-            href={"/apps/my-ip-address"}
-            className="cursor-pointer hover:underline"
-          >
-            My IP Address
-          </Link>
-          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
-          <Link
-            href={"/apps/password-generator-online"}
-            className="cursor-pointer hover:underline"
-          >
-            Password Generator
-          </Link>
-          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
-          <Link
-            href={"/apps/where-is-domain"}
-            className="cursor-pointer hover:underline"
-          >
-            Where is Domain
-          </Link>
-          <div className="hidden lg:flex rounded-full mx-2 h-1 w-1 bg-black"></div>
-          <Link
-            href={"/apps/age-calculator"}
-            className="cursor-pointer hover:underline"
-          >
-            Age Calculator
-          </Link>
-        </div>
       </div>
     </div>
   );
