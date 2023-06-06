@@ -9,8 +9,9 @@ import {
 } from "react-icons/ai";
 
 import Seo from "../components/Seo";
+import { getPosts } from "../utils/getPosts";
 
-const App = () => {
+const App = ({ posts }) => {
   const techs = [
     {
       name: "Google Cloud",
@@ -130,8 +131,48 @@ const App = () => {
           /> */}
         </div>
       </div>
-      <div className="flex-col justify-center items-center mt-24 border-t-2 pt-10 flex">
-        <h1 className="max-w-[70vw] lg:max-w-[50vw] text-center font-bold text-4xl lg:text-5xl">
+      {posts ? (
+        <div className="mt-24 py-10 flex flex-col bg-zinc-50 text-black justify-center items-center">
+          <h1 className="text-center text-4xl font-bold">
+            Some of our <span className="text-[#0173C6]">Articles</span>
+          </h1>
+          <p className="text-center text-sm px-10 sm:text-lg mt-2 opacity-50">
+            Here are some articles by us that could value your time
+          </p>
+          <div className="mt-5 max-w-[1200px] px-4 lg:px-8 mx-auto overflow-x-scroll">
+            <div className="flex flex-wrap">
+              {posts?.map((each) => (
+                <Link
+                  href={"/p/" + each.slug}
+                  className="w-full md:w-1/2 lg:w-1/3"
+                >
+                  <div className="hover:bg-white hover:-translate-y-3 transition-all flex flex-col m-2">
+                    <img
+                      className="rounded-md aspect-video object-cover"
+                      src={each.image}
+                      alt=""
+                    />
+                    <div className="p-2 mt-2 flex flex-col">
+                      <h1 className="hover:underline cursor-pointer font-bold text-xl">
+                        {each.title}
+                      </h1>
+                      <p>{each.date}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+      {/* <pre>{JSON.stringify(posts, null, 4)}</pre> */}
+      <div className="flex-col justify-center items-center mt-10 pt-10 flex">
+        <h1
+          style={{
+            lineHeight: 1.5,
+          }}
+          className="max-w-[70vw] lg:max-w-[50vw] text-center font-bold text-4xl lg:text-5xl"
+        >
           Our Technology scales for 1{" "}
           <span className="text-[#0173C6] text-6xl uppercase">Million</span>{" "}
           users
@@ -144,5 +185,15 @@ const App = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const posts = getPosts();
+
+  return {
+    props: {
+      posts: posts?.filter((each) => each.blog === true)?.slice(0, 6),
+    },
+  };
+}
 
 export default App;

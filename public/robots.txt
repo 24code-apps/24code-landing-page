@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow : /api
 
 # Host
 Host: https://24code.in
