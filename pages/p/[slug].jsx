@@ -9,20 +9,29 @@ import Head from "next/head";
 import Seo from "../../components/Seo";
 
 export default function PostPage({
-  frontmatter: { title, description, date, cover_image },
+  frontmatter: { title, description, date, image },
   slug,
   content,
   mdxSource,
 }) {
   return (
     <>
-      <Seo title={title} description={description} />
+      <Seo title={title} description={description} imageUrl={image} />
       <div
         className={`min-h-[400px] dark:bg-black prose dark:prose-invert p-3 text-md lg:text-lg mx-auto`}
       >
         <div className="flex">
-          <div className="flex flex-col justify-center">
-            <h1 className="mt-3 lg:mt-10 text-5xl mb-0">{title}</h1>
+          <div className="mt-3 flex flex-col justify-center">
+            {image ? (
+              <div className="flex">
+                <img
+                  className="aspect-video rounded-md w-full object-cover"
+                  src={image}
+                  alt=""
+                />
+              </div>
+            ) : null}
+            <h1 className="text-5xl mb-0">{title}</h1>
             <p className="text-md my-3 opacity-50">{date}</p>
           </div>
         </div>

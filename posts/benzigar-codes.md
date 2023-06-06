@@ -1,12 +1,12 @@
 ---
 title : Benzigar Codes
+slug: benzigar-codes
+image : https://avatars.githubusercontent.com/u/36362957?v=4
 description: Hi, I am Founder and Sr. Full Stack Developer of 24Code
 date: 18 May, 2023
 ---
 
 ### Hi there 👋
-
-<img src="https://media.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif"/>
 
 I'm currently working as a Sr. Full Stack Developer at [Pepul Private Tech](https://pepul.com/) for survival and I'm also building a open source and saas based startup [24code.in](https://www.24code.in) as a founder and developer. Your contributions are welcome. 😊
 
@@ -19,6 +19,8 @@ I'm currently working as a Sr. Full Stack Developer at [Pepul Private Tech](http
 ### Other Github Profiles 🥳
 - [Benzigar](https://www.github.com/benzigar-pepul) (11K+ Contributions) : My Github Profile Account with [Pepul Private Tech](https://pepul.com/).
 - [24code.in](https://www.github.com/24code-apps) : My organisation Github Profile for [24code.in](https://www.24code.in)
+
+<img src="https://media.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif"/>
 
 ### Work Experiences 🗂
 

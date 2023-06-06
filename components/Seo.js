@@ -23,6 +23,13 @@ function Seo({
       ],
       site_name: "24Code",
     },
+    additionalLinkTags: [
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "favicon.ico",
+      },
+    ],
     // twitter: {
     //   handle: "@mytwitterhandle",
     //   site: "@mysitename",
