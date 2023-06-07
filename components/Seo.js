@@ -1,4 +1,4 @@
-import { NextSeo } from "next-seo";
+import { NextSeo, ArticleJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 
 function Seo({
@@ -7,6 +7,8 @@ function Seo({
   url = "https://www.24code.in",
   imageUrl = "/android-chrome-512x512.png",
   imageAlt = "",
+  blog = false,
+  date = new Date(),
 }) {
   const router = useRouter();
   const SEO = {
@@ -39,7 +41,24 @@ function Seo({
     // },
   };
 
-  return <NextSeo {...SEO} />;
+  return (
+    <>
+      <NextSeo {...SEO} />
+      {true ? (
+        <ArticleJsonLd
+          useAppDir={true}
+          type="BlogPosting"
+          url={url + router.asPath}
+          title={title}
+          images={[imageUrl]}
+          datePublished={new Date(date)}
+          dateModified={new Date(date)}
+          authorName="Benzigar Codes"
+          description={description}
+        />
+      ) : null}
+    </>
+  );
 }
 
 export default Seo;

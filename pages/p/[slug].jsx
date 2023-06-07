@@ -9,14 +9,20 @@ import Head from "next/head";
 import Seo from "../../components/Seo";
 
 export default function PostPage({
-  frontmatter: { title, description, date, image },
+  frontmatter: { title, description, date, image, blog },
   slug,
   content,
   mdxSource,
 }) {
   return (
     <>
-      <Seo title={title} description={description} imageUrl={image} />
+      <Seo
+        title={title}
+        description={description}
+        imageUrl={image}
+        blog={blog}
+        date={date}
+      />
       <div
         className={`min-h-[400px] dark:bg-black prose dark:prose-invert p-3 text-md lg:text-lg mx-auto`}
       >
