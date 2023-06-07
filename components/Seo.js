@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 
 function Seo({
   title = "24Code | Software Development Company",
@@ -7,10 +8,11 @@ function Seo({
   imageUrl = "/android-chrome-512x512.png",
   imageAlt = "",
 }) {
+  const router = useRouter();
   const SEO = {
     title,
     description,
-    canonical: url,
+    canonical: url + router.asPath,
     openGraph: {
       url,
       title,
