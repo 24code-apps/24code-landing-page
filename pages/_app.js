@@ -11,6 +11,7 @@ import React from "react";
 import Link from "next/link";
 import { AiOutlineRight, AiOutlineRightCircle } from "react-icons/ai";
 import { RiApps2Fill } from "react-icons/ri";
+import useScrollRestoration from "../utils/hooks/useScrollRestoration";
 
 const Footer = () => (
   <>
@@ -90,7 +91,8 @@ const Header = () => {
   );
 };
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
+  useScrollRestoration(router);
   const [darkMode, setDarkMode] = React.useState(false);
 
   const checkDarkMode = async () => {
@@ -106,14 +108,14 @@ function MyApp({ Component, pageProps }) {
     <>
       {process.env.NODE_ENV !== "development" ? (
         <>
-          <Script
+          {/* <Script
             src={
               "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
               process.env.NEXT_PUBLIC_GOOGLE_AD_ID
             }
             strategy="beforeInteractive"
             crossorigin="anonymous"
-          />
+          /> */}
           <Script
             src={
               "https://www.googletagmanager.com/gtag/js?id=" +
