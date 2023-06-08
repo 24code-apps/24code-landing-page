@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 
 import Seo from "../components/Seo";
+import Blog from "../components/Blog";
 import { getPosts } from "../utils/getPosts";
 
 const App = ({ posts }) => {
@@ -146,19 +147,7 @@ const App = ({ posts }) => {
                   href={"/p/" + each.slug}
                   className="w-full md:w-1/2 lg:w-1/3"
                 >
-                  <div className="hover:bg-white hover:-translate-y-3 transition-all flex flex-col m-2">
-                    <img
-                      className="rounded-md aspect-video object-cover"
-                      src={each.image}
-                      alt=""
-                    />
-                    <div className="p-2 mt-2 flex flex-col">
-                      <h1 className="hover:underline cursor-pointer font-bold text-xl">
-                        {each.title}
-                      </h1>
-                      <p>{each.date}</p>
-                    </div>
-                  </div>
+                  <Blog each={each} />
                 </Link>
               ))}
             </div>

@@ -37,6 +37,10 @@ const Header = () => {
       link: "/about",
     },
     {
+      name: "Blogs",
+      link: "/blogs",
+    },
+    {
       name: "Developers",
       link: "/developers",
     },
