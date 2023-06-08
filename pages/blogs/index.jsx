@@ -11,7 +11,7 @@ export default function Blogs({ posts }) {
         title="24Code - Blogs"
         description="Stay up-to-date with the latest in technology trends and insights. Our tech blog features expert opinions, in-depth analysis, and practical tips on everything from software development to cybersecurity. Join the conversation and learn from our knowledgeable writers. Browse our collection of informative articles and stay ahead of the curve in the fast-paced world of tech."
       />
-      <h1 className="mt-10 mb-10 font-bold text-5xl text-center">
+      <h1 className="border-t-2 xl:border-t-0 pt-5 my-5 xl:mt-10 xl:mb-10 font-bold text-xl xl:text-5xl text-center">
         Our Tech Blogs
       </h1>
       <div className="mx-auto flex flex-wrap max-w-[1200px]">
